@@ -28,6 +28,7 @@ In your database schema, change primary key attribute from `:binary_id` to `UUID
 ```elixir
 def App.Schemas.User do
   @primary_key {:id, UUIDv7, autogenerate: true}
+  @foreign_key_type UUIDv7 # if you have relationships, you'll also want to include this
 end
 ```
 
